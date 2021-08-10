@@ -91,11 +91,17 @@ code {
     max-width: 90%;
 }
 
+.note-background-code {
+    background-color: rgb(114, 104, 104);
+}
+
 img {
-    aspect-ratio: auto 850 / 480;
+    /* aspect-ratio: auto 850 / 480; */
     max-width: 100%;
     height: auto;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .highlight {
@@ -105,7 +111,7 @@ img {
     padding: 0 3px;
 }
 
-.link_link {
+a {
     color: aqua;
 }
 
