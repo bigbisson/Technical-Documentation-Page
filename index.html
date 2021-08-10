@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Documentation</title>
+    <title>CSS Basics Documentation</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -238,7 +238,7 @@
                                 &emsp;&emsp;&emsp;font-family: "Open Sans", sans-serif; /* this should be the rest of
                                 the output you got from Google fonts */
                                 }</code>
-                            <code class="note-background-code"><b>Note</b>: Anything in CSS between /* and */ is a CSS
+                            <code class="note-background"><b>Note</b>: Anything in CSS between /* and */ is a CSS
                                 comment. The browser ignores comments as it renders the code. CSS comments are a way for
                                 you to write helpful notes about your code or logic.</code>
                         </li>
@@ -265,7 +265,8 @@
                         </li>
                     </ol>
                     Adjust the px values as you like. Your work-in-progress should look similar to this:
-                    <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/website-screenshot-font-small.png" alt="">
+                    <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/website-screenshot-font-small.png"
+                        alt="">
                 </p>
             </article>
         </section>
@@ -273,25 +274,224 @@
         <section class="main-section" id="CSS:_all_about_boxes">
             <header>CSS: all about boxes</header>
             <article>
-                
+                <p>
+                    Something you'll notice about writing CSS: a lot of it is about boxes. This includes setting size,
+                    color, and position. Most HTML elements on your page can be thought of as boxes sitting on top of
+                    other boxes.
+                </p>
+
+                <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/boxes.jpg"
+                    alt="">
+
+                <p>
+                    CSS layout is mostly based on the box model. Each box taking up space on your page has properties
+                    like:
+                </p>
+
+                <ul>
+                    <li><span class="highlight">padding</span>, the space around the content. In the example below, it
+                        is the space around the paragraph text.</li>
+                    <li><span class="highlight">border</span>, the solid line that is just outside the padding.</li>
+                    <li><span class="highlight">margin</span>, the space around the outside of the border.</li>
+                </ul>
+
+                <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/box-model.png"
+                    alt="">
+
+                <p>
+                    In this section we also use:
+                    <ul>
+                        <li><span class="highlight">width</span> (of an element).</li>
+                        <li><span class="highlight">background-color</span>, the color behind an element's content and
+                            padding.</li>
+                        <li><span class="highlight">color</span>, the color of an element's content (usually text).</li>
+                        <li><span class="highlight">text-shadow</span> sets a drop shadow on the text inside an element.
+                        </li>
+                        <li><span class="highlight">display</span> sets the display mode of an element. (keep reading to
+                            learn more)</li>
+                    </ul>
+                    To continue, let's add more CSS. Keep adding these new rules at the bottom of <span
+                        class="highlight">style.css</span>. Experiment with
+                    changing values to see what happens.
+                </p>
+
+                <h3>Changing the page color</h3>
+                <p>
+                    <code>html {
+                        &emsp;&emsp;&emsp;background-color: #00539F;
+                        }</code>
+                    This rule sets a background color for the entire page. Change the color code to <a
+                        href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/What_will_your_website_look_like#theme_color">the
+                        color you chose in What will my website look like?</a>.
+                </p>
+
+                <h3>Styling the body</h3>
+                <p>
+                    <code>body {
+                        &emsp;&emsp;&emsp;width: 600px;
+                        &emsp;&emsp;&emsp;margin: 0 auto;
+                        &emsp;&emsp;&emsp;background-color: #FF9500;
+                        &emsp;&emsp;&emsp;padding: 0 20px 20px 20px;
+                        &emsp;&emsp;&emsp;border: 5px solid black;
+                        }</code>
+                    There are several declarations for the <span class="highlight"><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;</a></span>
+                    element. Let's go through these line-by-line:
+                    <ul>
+                        <li>
+                            <span class="highlight">width: 600px;</span> This forces the body to always be 600 pixels
+                            wide.
+                        </li>
+                        <li>
+                            <span class="highlight">margin: 0 auto;</span> When you set two values on a property like
+                            margin or padding, the first value affects the element's top and bottom side (setting it to
+                            0 in this case); the second value affects the left and right side. (Here, auto is a special
+                            value that divides the available horizontal space evenly between left and right). You can
+                            also use one, three, or four values, as documented in <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin#syntax">Margin Syntax</a>.
+                        </li>
+                        <li>
+                            <span class="highlight">background-color: #FF9500;</span> This sets the element's background
+                            color. This project uses a reddish orange for the body background color, as opposed to dark
+                            blue for the <span><a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html">&lt;html&gt;</a></span>
+                            element. (Feel free to experiment.)
+                        </li>
+                        <li>
+                            <span class="highlight">padding: 0 20px 20px 20px;</span> This sets four values for padding.
+                            The goal is to put some space around the content. In this example, there is no padding on
+                            the top of the body, and 20 pixels on the right, bottom and left. The values set top, right,
+                            bottom, left, in that order. As with margin, you can use one, two, three, or four values, as
+                            documented in <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding#syntax">Padding
+                                Syntax</a>.
+                        </li>
+                        <li>
+                            <span class="highlight">border: 5px solid black;</span> This sets values for the width,
+                            style and color of the border. In this case, it's a five-pixel–wide, solid black border, on
+                            all sides of the body.
+                        </li>
+                    </ul>
+                </p>
+
+                <h3>Positioning and styling the main page title</h3>
+                <p>
+                    <code>h1 {
+                        &emsp;&emsp;&emsp;margin: 0;
+                        &emsp;&emsp;&emsp;padding: 20px 0;
+                        &emsp;&emsp;&emsp;color: #00539F;
+                        &emsp;&emsp;&emsp;text-shadow: 3px 3px 1px black;
+                        }</code>
+                    You may have noticed there's a horrible gap at the top of the body. That happens because browsers
+                    apply default styling to the <span class="highlight"><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;</a></span>
+                    element (among others). That might seem like a bad idea, but the intent is to provide basic
+                    readability for unstyled pages. To eliminate the gap, we overwrite the browser's default styling
+                    with the setting <span class="highlight">margin: 0;</span>.
+                </p>
+
+                <p>
+                    Next, we set the heading's top and bottom padding to 20 pixels.
+                </p>
+
+                <p>
+                    Following that, we set the heading text to be the same color as the HTML background color.
+                </p>
+
+                <p>
+                    Finally, text-shadow applies a shadow to the text content of the element. Its four values are:
+                    <ul>
+                        <li>The first pixel value sets the <b>horizontal offset</b> of the shadow from the text: how far
+                            it
+                            moves across.</li>
+                        <li>The second pixel value sets the <b>vertical offset</b> of the shadow from the text: how far
+                            it
+                            moves down.</li>
+                        <li>The third pixel value sets the <b>blur radius</b> of the shadow. A larger value produces a
+                            more
+                            fuzzy-looking shadow.</li>
+                        <li>The fourth value sets the base color of the shadow.</li>
+                    </ul>
+                    Try experimenting with different values to see how it changes the appearance.
+                </p>
+
+                <h3>Centering the image</h3>
+                <p>
+                    <code>img {
+                        &emsp;&emsp;&emsp;display: block;
+                        &emsp;&emsp;&emsp;margin: 0 auto;
+                        }</code>
+                    Next, we center the image to make it look better. We could use the <span class="highlight">margin: 0
+                        auto trick</span> again as we
+                    did for the body. But there are differences that require an additional setting to make the CSS work.
+                </p>
+
+                <p>
+                    The <span class="highlight"><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;</a></span>
+                    is a <b>block</b> element, meaning it takes up space on the page. The margin applied to a block
+                    element will be respected by other elements on the page. In contrast, images are <b>inline</b>
+                    elements, for the auto margin trick to work on this image, we must give it block-level behavior
+                    using <span class="highlight">display: block;</span>.
+                </p>
+                <code class="note-background">Note:
+                    The instructions above assume that you're using an image smaller than the width set on the body.
+                    (600 pixels) If your image is larger, it will overflow the body, spilling into the rest of the page.
+                    To fix this, you can either: 1) reduce the image width using a <a
+                        href="https://en.wikipedia.org/wiki/Raster_graphics_editor">graphics editor</a>, or 2) use CSS
+                    to
+                    size the image by setting the <span class="highlight">width</span> property on the <span
+                        class="highlight">&lt;img&gt;</span> element with a smaller
+                    value.</code>
+                <code class="note-background">Note:
+                    Don't be too concerned if you don't completely understand <span class="highlight">display:
+                        block;</span> or the differences between
+                    a block element and an inline element. It will make more sense as you continue your study of CSS.
+                    You can find more information about different display values on MDN's <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display reference
+                        page</a>.</code>
             </article>
         </section>
 
         <section class="main-section" id="Conclusion">
             <header>Conclusion</header>
             <article>
-
+                <p>
+                    If you followed all the instructions in this article, you should have a page that looks similar to
+                    this one:
+                    <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/website-screenshot-final.png"
+                        alt="">
+                </p>
+                <p>
+                    (You can <a href="https://mdn.github.io/beginner-html-site-styled/">view our version here</a>.) If
+                    you get stuck, you can always compare your work with our
+                    <a href="https://github.com/mdn/beginner-html-site-styled/blob/gh-pages/styles/style.css">finished
+                        example code on GitHub</a>.
+                </p>
+                <p>
+                    In this exercise, we have just scratched the surface of CSS. To go further, see <a
+                        href="https://developer.mozilla.org/en-US/docs/Learn/CSS">Learning to style
+                        HTML using CSS</a>.
+                </p>
             </article>
         </section>
 
         <section class="main-section" id="Reference">
             <header>Reference</header>
             <article>
-
+                <p>
+                    This Technical Documentation about CSS basic are from <a
+                        href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics#selecting_multiple_elements">MDN
+                        Web Docs - CSS basics</a>
+                </p>
             </article>
         </section>
     </main>
-    <footer></footer>
+    <!-- <footer>
+        <p>
+            Web Dev and Design by <a href="https://github.com/bigbisson">BigBisson</a>
+        </p>
+    </footer> -->
     <script src="js/script.js" type="text/javascript"></script>
 </body>
 

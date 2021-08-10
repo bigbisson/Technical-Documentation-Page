@@ -8,6 +8,11 @@ body {
     text-rendering: optimizeSpeed;
 }
 
+/* footer {
+    position: absolute;
+    margin-bottom: 0;
+} */
+
 #navbar {
     position: fixed;
     min-width: 290px;
@@ -91,17 +96,15 @@ code {
     max-width: 90%;
 }
 
-.note-background-code {
+.note-background {
     background-color: rgb(114, 104, 104);
 }
 
 img {
-    /* aspect-ratio: auto 850 / 480; */
     max-width: 100%;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .highlight {
@@ -112,7 +115,7 @@ img {
 }
 
 a {
-    color: aqua;
+    color: rgb(2, 204, 204);
 }
 
 @media only screen and (max-width: 815px) {
@@ -164,7 +167,7 @@ th {
     padding: 15px;
 }
 
-tbody td{
+tbody td {
     border: 1px solid #a1a1a1;
     vertical-align: inherit;
     text-align: justify;
